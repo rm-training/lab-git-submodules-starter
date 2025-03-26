@@ -64,7 +64,17 @@ git config --local diff.submodule log
 git config --local status.submoduleSummary true
 ```
 
+You'll also need to allow `file` protocol:
+
+```bash
+# you could do this locally in each module & the main repo, too
+# or go global:
+git config --global protocol.file.allow always
+```
+
+More [info about file protocol](https://git-scm.com/docs/git-config#Documentation/git-config.txt-protocolallow)
+
 Then add your submodule(s):
 ```bash
-git submodule add ../simulated-remotes/module-a lib/module-a
+git submodule add ../external-remotes/module-a lib/module-a
 ```
